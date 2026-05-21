@@ -13,4 +13,7 @@ interface MatchDao {
 
     @Query("SELECT * FROM matches")
     fun getAllMatches(): Flow<List<MatchEntity>>
+
+    @Query("DELETE FROM matches WHERE teamA = :teamA AND teamB = :teamB AND date = :date")
+    suspend fun deleteMatch(teamA: String, teamB: String, date: String)
 }

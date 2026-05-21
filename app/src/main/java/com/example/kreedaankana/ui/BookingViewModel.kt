@@ -40,13 +40,14 @@ class BookingViewModel(application: Application) :
     fun bookSlot(
         team: String,
         time: String,
+        ground: String,
         onResult: (Boolean) -> Unit
     ) {
 
         viewModelScope.launch {
 
             val success =
-                repository.bookSlot(team, time)
+                repository.bookSlot(team, time, ground)
 
             loadBookings()
 

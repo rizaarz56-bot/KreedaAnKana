@@ -13,7 +13,8 @@ class BookingRepository(
 
     suspend fun bookSlot(
         team: String,
-        time: String
+        time: String,
+        ground: String
     ): Boolean {
 
         val existing = dao.getBookingByTime(time)
@@ -23,7 +24,8 @@ class BookingRepository(
             dao.insertBooking(
                 BookingEntity(
                     team = team,
-                    time = time
+                    time = time,
+                    ground = ground
                 )
             )
 

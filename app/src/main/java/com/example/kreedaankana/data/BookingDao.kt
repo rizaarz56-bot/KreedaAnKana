@@ -16,4 +16,7 @@ interface BookingDao {
 
     @Query("SELECT * FROM bookings")
     suspend fun getAllBookings(): List<BookingEntity>
+
+    @Query("DELETE FROM bookings WHERE time = :time AND team = :team")
+    suspend fun deleteBookingByTimeAndTeam(team: String, time: String)
 }

@@ -63,7 +63,7 @@ fun BookSlotScreen(viewModel: BookingViewModel = viewModel()) {
                                     return@clickable
                                 }
 
-                                viewModel.bookSlot(teamName, slot) { success ->
+                                viewModel.bookSlot(teamName, slot, "Village Ground") { success ->
                                     if (success) {
                                         Toast.makeText(context, "Booked Successfully", Toast.LENGTH_SHORT).show()
                                     } else {
